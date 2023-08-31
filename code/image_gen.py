@@ -11,9 +11,10 @@ def query(payload):
 	return response.content
 
 def main():
-    st.title("Text Prompt and Model Output")
+    st.title("Visualize your imagination")
+    st.markdown("---")
 
-    user_input = st.text_input("Enter a text prompt", "")
+    user_input = st.text_input("Enter a your thought !", "")
 
     if st.button("Generate"):
         if user_input:
