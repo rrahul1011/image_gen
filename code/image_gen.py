@@ -34,7 +34,7 @@ def main():
     st.markdown(
         "<div style='text-align: center;'>"
         "<h2 style='color: #3366FF;'>🎨 Welcome! I am the ImageGenie! 🧞‍♂️</h2>"
-        "<p style='color: #FF5733;'>I generate vibrant images based on your textual descriptions using the DALL-E API.</p>"
+        "<p style='color: #FF5733;'>I generate vibrant images based on your textual descriptions.</p>"
         "</div>",
         unsafe_allow_html=True
     )
