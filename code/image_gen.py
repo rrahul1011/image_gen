@@ -22,6 +22,7 @@ def main():
         "### How to Use?\n\n"
         "1. Enter a description in the text area on the left."
         "2. Click the 'Generate Image' button to see the generated image."
+         "3. After generating, you can download the image using the 'Download Image' button below."
         "\n\n"
         "### Limitations\n\n"
         "Please note the following limitations:\n"
