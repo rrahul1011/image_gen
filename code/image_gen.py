@@ -17,11 +17,11 @@ def main():
     st.sidebar.markdown("<hr style='border: 2px solid red; width: 100%;'>", unsafe_allow_html=True)
     st.sidebar.markdown(
         "## ImageGenie App\n\n"
-        "Welcome to ImageGenie, where you can generate vibrant images based on textual descriptions using the DALL-E API."
+        "Welcome to ImageGenie, where you can generate vibrant images based on textual descriptions."
         "\n\n"
         "### How to Use?\n\n"
         "1. Enter a description in the text area on the left."
-        "2. Click the 'Generate Image' button to see the generated image on the right."
+        "2. Click the 'Generate Image' button to see the generated image."
         "\n\n"
         "### Limitations\n\n"
         "Please note the following limitations:\n"
