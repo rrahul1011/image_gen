@@ -26,7 +26,7 @@ def main():
         "\n\n"
         "### Limitations\n\n"
         "Please note the following limitations:\n"
-        "- The quality of generated images depends on the input description."
+        "- The quality of generated images depends on the input description.""\n\n"
         "- Complex or highly specific descriptions may not yield accurate results."
         "\n\n"
         "Feel free to experiment and have fun!"
