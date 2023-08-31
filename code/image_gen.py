@@ -56,6 +56,7 @@ def main():
             image = Image.open(io.BytesIO(image_bytes))
             st.image(image, caption="Generated Image", use_column_width=True)
             st.success("Image generated successfully!")
+            st.download_button("Download Image", image_bytes, file_name="generated_image.png")
         else:
             st.warning("Please enter a text prompt.")
 
