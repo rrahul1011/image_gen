@@ -3,7 +3,8 @@ import requests
 import io
 from PIL import Image
 
-API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
+#API_URL = "https://api-inference.huggingface.co/models/runwayml/stable-diffusion-v1-5"
+API_URL = "https://api-inference.huggingface.co/models/minimaxir/sdxl-wrong-lora"
 API_TOKEN = "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"
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
