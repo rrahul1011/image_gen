@@ -2,9 +2,16 @@ import streamlit as st
 import requests
 import io
 from PIL import Image
-API=st.sidebar.text_input("Enter Your API key:-)
+api_key = st.sidebar.text_input("Enter Your API key")
+
+# Check if the user has entered an API key
+if api_key:
+    st.sidebar.write("API key entered:", api_key)
+    # You can use the 'api_key' variable in your application logic here.
+else:
+    st.sidebar.warning("Please enter your API key")
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
-API_TOKEN = API
+API_TOKEN = api_key
 headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 def query(payload):
