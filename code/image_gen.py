@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import io
 from PIL import Image
+from PIL.UnidentifiedImageError import UnidentifiedImageError
 
 def query(payload, headers):
     API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
@@ -52,10 +53,13 @@ def main():
                     "inputs": user_input,
                 }
                 image_bytes = query(payload, headers)
-                image = Image.open(io.BytesIO(image_bytes))
-                st.image(image, caption="Generated Image", use_column_width=True)
-                st.success("Image generated successfully!")
-                st.download_button("Download Image", image_bytes, file_name="generated_image.png")
+                try:
+                    image = Image.open(io.BytesIO(image_bytes))
+                    st.image(image, caption="Generated Image", use_column_width=True)
+                    st.success("Image generated successfully!")
+                    st.download_button("Download Image", image_bytes, file_name="generated_image.png")
+                except UnidentifiedImageError:
+                    st.warning("Unable to identify the image format. Please check the response.")
             else:
                 st.warning("Please enter your API key.")
         else:
