@@ -2,21 +2,7 @@ import streamlit as st
 import requests
 import io
 from PIL import Image
-api_key = st.sidebar.text_input("Enter Your API key")
 
-# Check if the user has entered an API key
-if api_key:
-    st.sidebar.write("API key entered:", api_key)
-    # You can use the 'api_key' variable in your application logic here.
-else:
-    st.sidebar.warning("Please enter your API key")
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
-API_TOKEN = api_key
-headers = {"Authorization": f"Bearer {API_TOKEN}"}
-
-def query(payload):
-    response = requests.post(API_URL, headers=headers, json=payload)
-    return response.content
 
 def main():
     st.sidebar.markdown("<hr style='border: 2px solid red; width: 100%;'>", unsafe_allow_html=True)
@@ -26,6 +12,20 @@ def main():
         "## ImageGenie App\n\n"
         "Welcome to ImageGenie, where you can generate vibrant images based on textual descriptions."
         "\n\n"
+        api_key = st.sidebar.text_input("Enter Your API key",type="password")
+
+        # Check if the user has entered an API key
+        if api_key:
+            st.sidebar.success("API Detected")
+        else:
+            st.sidebar.warning("Please enter your API key")
+        API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
+        API_TOKEN = api_key
+        headers = {"Authorization": f"Bearer {API_TOKEN}"}
+
+def query(payload):
+    response = requests.post(API_URL, headers=headers, json=payload)
+    return response.content
         "### How to Use?\n\n"
         "1. Enter a description in the text area on the left.""\n\n"
         "2. Click the 'Generate Image' button to see the generated image.""\n\n"
