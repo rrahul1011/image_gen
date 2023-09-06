@@ -2,7 +2,10 @@ import streamlit as st
 import requests
 import io
 from PIL import Image
-
+API=st.sidebar.text_input("Enter Your API key:-)
+API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
+API_TOKEN = API
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
@@ -12,10 +15,6 @@ def main():
     st.sidebar.markdown("<hr style='border: 2px solid red; width: 100%;'>", unsafe_allow_html=True)
     st.sidebar.image("code/cropped-Sigmoid_logo_3x.png", use_column_width=True)
     st.sidebar.markdown("<hr style='border: 2px solid red; width: 100%;'>", unsafe_allow_html=True)
-    API=st.sidebar.input_text("Enter Your API key:-)
-    API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
-    API_TOKEN = API
-    headers = {"Authorization": f"Bearer {API_TOKEN}"}
     st.sidebar.markdown(
         "## ImageGenie App\n\n"
         "Welcome to ImageGenie, where you can generate vibrant images based on textual descriptions."
